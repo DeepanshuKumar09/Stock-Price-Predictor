@@ -19,7 +19,7 @@ st.set_page_config(page_title='Stock Price Predictor', layout='wide')
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv("C:/Projects/Sales Forecasting/yahoo_stock (1).csv")
+    df = pd.read_csv("yahoo_stock (1).csv")
     df['Date'] = pd.to_datetime(df['Date'])
     df.set_index('Date', inplace=True)
     new_df = df['High'].iloc[:-4]
@@ -544,4 +544,5 @@ ax_future_pred.set_ylabel('High Price')
 ax_future_pred.legend()
 ax_future_pred.grid(True)
 st.pyplot(fig_future_pred)
+
 
